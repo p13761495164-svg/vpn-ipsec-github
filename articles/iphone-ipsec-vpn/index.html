@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="简单明了的 iPhone IPSec VPN 配置步骤。">
+    <meta name="theme-color" content="#f5f5f7">
+    <title>在 iPhone 上配置 IPSec VPN｜实用指南知识库</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <nav class="article-nav" aria-label="文章导航">
+      <div class="wrap">
+        <a href="../../"><span aria-hidden="true">←</span> 返回知识库</a>
+      </div>
+    </nav>
+
+    <header class="hero article-hero">
+      <div class="wrap">
+        <span class="eyebrow">网络设置 · 约 3 分钟</span>
+        <h1>连接 IPSec VPN</h1>
+        <p class="lead">准备好管理员提供的连接信息，跟着下面的步骤操作，几分钟即可完成。</p>
+        <a class="primary-button" href="#steps">开始配置</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section wrap" aria-labelledby="prepare-title">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div><h2 id="prepare-title">开始前先准备</h2><p>向 VPN 服务商或网络管理员取得以下信息。</p></div>
+        </div>
+        <div class="checklist">
+          <div class="check-item"><span aria-hidden="true">✓</span>服务器地址</div>
+          <div class="check-item"><span aria-hidden="true">✓</span>用户名和密码</div>
+          <div class="check-item"><span aria-hidden="true">✓</span>群组名称（如有）</div>
+          <div class="check-item"><span aria-hidden="true">✓</span>共享密钥或证书</div>
+        </div>
+        <aside class="notice"><strong>安全提醒</strong>不要把密码或共享密钥发给他人，也不要保存到公开的 GitHub 仓库。</aside>
+      </section>
+
+      <section class="section section-tint" id="steps" aria-labelledby="steps-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <div><h2 id="steps-title">在 iPhone 上配置</h2><p>本教程适用于系统内建的 IPSec（Cisco IPSec）连接。</p></div>
+          </div>
+          <ol class="steps">
+            <li><span class="step-number">1</span><div><h3>打开设置</h3><p>进入 <b>通用</b> → <b>VPN 与设备管理</b> → <b>VPN</b>。</p></div></li>
+            <li><span class="step-number">2</span><div><h3>添加配置</h3><p>点按 <b>添加 VPN 配置…</b>，再点按 <b>类型</b>，选择 <b>IPSec</b>。</p></div></li>
+            <li><span class="step-number">3</span><div><h3>填写连接信息</h3><p>按照管理员提供的资料填写下面各项。</p></div></li>
+          </ol>
+          <div class="settings-card" role="region" aria-label="VPN 配置项目说明">
+            <div><span>描述</span><strong>自定义名称，例如“公司 VPN”</strong></div>
+            <div><span>服务器</span><strong>服务器域名或 IP 地址</strong></div>
+            <div><span>账户</span><strong>VPN 用户名</strong></div>
+            <div><span>密码</span><strong>VPN 密码</strong></div>
+            <div><span>使用证书</span><strong>共享密钥方式保持关闭</strong></div>
+            <div><span>群组名称</span><strong>按管理员提供的信息填写，没有则留空</strong></div>
+            <div><span>密钥</span><strong>管理员提供的共享密钥</strong></div>
+          </div>
+          <ol class="steps steps-continued" start="4">
+            <li><span class="step-number">4</span><div><h3>保存并连接</h3><p>点按右上角 <b>完成</b>，选中刚添加的配置，然后打开 <b>VPN 状态</b> 开关。</p></div></li>
+            <li><span class="step-number">5</span><div><h3>确认连接成功</h3><p>状态显示“已连接”或屏幕顶部出现 VPN 标志，即表示连接成功。</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section wrap" aria-labelledby="help-title">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <div><h2 id="help-title">连接不上？</h2><p>依次检查这几个常见问题。</p></div>
+        </div>
+        <div class="help-grid">
+          <article><span>1</span><p>检查服务器、用户名和密码，留意大小写及前后空格。</p></article>
+          <article><span>2</span><p>确认群组名称和共享密钥与服务器端设置完全一致。</p></article>
+          <article><span>3</span><p>切换 Wi-Fi 或蜂窝网络后重试。</p></article>
+          <article><span>4</span><p>确认服务器使用 Cisco IPSec。IKEv2 参数不能填到 IPSec 配置中。</p></article>
+        </div>
+        <details>
+          <summary>如何删除 VPN 配置？</summary>
+          <p>进入 <b>设置</b> → <b>通用</b> → <b>VPN 与设备管理</b> → <b>VPN</b>，点按配置旁的 ⓘ，再点按 <b>删除 VPN</b>。</p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-content">
+        <p>本文只介绍客户端配置，具体连接参数由 VPN 服务提供方或网络管理员决定。</p>
+        <nav aria-label="参考资料">
+          <a href="https://support.apple.com/zh-cn/guide/deployment/depdf31db478/web">Apple：Cisco IPsec 设置</a>
+          <a href="../../">返回知识库</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

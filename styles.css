@@ -241,3 +241,110 @@ a { color: var(--blue); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Knowledge base home */
+.library-page { min-height: 100vh; background: var(--tint); }
+
+.library-hero {
+  padding: 24px 0 70px;
+  color: #fff;
+  background: #17171c;
+}
+
+.brand { margin-bottom: 74px; }
+.brand a { display: inline-flex; gap: 10px; align-items: center; color: #fff; font-weight: 700; text-decoration: none; }
+.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #17171c; background: #fff; }
+.library-intro { max-width: 680px; }
+.library-intro .eyebrow { color: #8fc7ff; }
+.library-intro h1 { margin-bottom: 16px; }
+.library-intro p { margin-bottom: 0; color: #b7b7bd; font-size: clamp(19px, 3vw, 23px); }
+
+.library-main { min-height: 420px; padding-top: 58px; padding-bottom: 88px; }
+.library-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 24px; }
+.library-heading h2 { font-size: 30px; }
+.library-heading p { margin-bottom: 0; color: var(--muted); }
+.article-list { display: grid; gap: 18px; }
+
+.article-card {
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.article-card:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0, 0, 0, .08); }
+.article-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 18px; color: var(--muted); font-size: 14px; }
+.category { padding: 3px 10px; border-radius: 999px; color: var(--blue-dark); background: #e4f1ff; font-weight: 650; }
+.article-card-content { display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; }
+.article-card h3 { margin-bottom: 8px; font-size: clamp(23px, 4vw, 30px); line-height: 1.25; letter-spacing: -.02em; }
+.article-card h3 a { color: var(--ink); text-decoration: none; }
+.article-card h3 a:hover { color: var(--blue); }
+.article-card-content p { max-width: 650px; margin-bottom: 0; color: var(--muted); }
+
+.copy-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.copy-link:hover { border-color: var(--blue); color: var(--blue); background: #f4f9ff; }
+.copy-link:focus-visible { outline: 3px solid #7bb9ff; outline-offset: 3px; }
+.copy-link.is-copied { border-color: #34c759; color: #17652c; background: var(--safe); }
+.link-icon { font-size: 18px; line-height: 1; }
+.read-link { display: inline-flex; gap: 7px; align-items: center; margin-top: 24px; font-weight: 650; text-decoration: none; }
+.read-link span { transition: transform .2s ease; }
+.read-link:hover span { transform: translateX(3px); }
+
+.library-footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); background: var(--tint); font-size: 14px; }
+.library-footer p { margin: 0; }
+
+.toast {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  bottom: 28px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(29, 29, 31, .94);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+  opacity: 0;
+  transform: translate(-50%, 16px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* Article navigation */
+.article-nav { padding: 16px 0; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .92); }
+.article-nav a { display: inline-flex; gap: 7px; align-items: center; color: var(--ink); font-weight: 650; text-decoration: none; }
+.article-nav a:hover { color: var(--blue); }
+.article-hero { padding-top: 72px; }
+
+@media (max-width: 640px) {
+  .library-hero { padding-bottom: 50px; }
+  .brand { margin-bottom: 50px; }
+  .library-main { padding-top: 42px; padding-bottom: 64px; }
+  .article-card { padding: 22px; border-radius: 20px; }
+  .article-card-content { flex-direction: column; gap: 20px; }
+  .copy-link { width: 100%; justify-content: center; }
+  .toast { bottom: 18px; white-space: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-card, .read-link span, .toast { transition: none; }
+}
